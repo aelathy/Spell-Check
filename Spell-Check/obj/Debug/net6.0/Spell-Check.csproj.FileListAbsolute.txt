@@ -1,0 +1,15 @@
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.csproj.AssemblyReference.cache
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.AssemblyInfoInputs.cache
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.AssemblyInfo.cs
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.csproj.CoreCompileInputs.cache
+C:\Users\alyel\Desktop\CS-30\Spell-Check\bin\Debug\net6.0\Spell-Check.exe
+C:\Users\alyel\Desktop\CS-30\Spell-Check\bin\Debug\net6.0\Spell-Check.deps.json
+C:\Users\alyel\Desktop\CS-30\Spell-Check\bin\Debug\net6.0\Spell-Check.runtimeconfig.json
+C:\Users\alyel\Desktop\CS-30\Spell-Check\bin\Debug\net6.0\Spell-Check.dll
+C:\Users\alyel\Desktop\CS-30\Spell-Check\bin\Debug\net6.0\Spell-Check.pdb
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.dll
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\refint\Spell-Check.dll
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.pdb
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\Spell-Check.genruntimeconfig.cache
+C:\Users\alyel\Desktop\CS-30\Spell-Check\obj\Debug\net6.0\ref\Spell-Check.dll
