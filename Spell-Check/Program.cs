@@ -38,14 +38,28 @@ class Program
             Console.WriteLine("5: Exit");
             Console.Write("Please enter a numerical menu option: ");
             string menuOption = Console.ReadLine();
+            Stopwatch stopwatch = new Stopwatch();
+
+
 
             if (menuOption == "1")
             {
                 // LinearSearch()
+                Console.Write("Please enter the word you are looking for: ");
+                string dictionaryLSearch = Console.ReadLine();
+                stopwatch.Start();
+                if (linearSearch(dictionary, dictionaryLSearch) > -1)
+                {
+                    stopwatch.Stop();
+                    Console.WriteLine($"{dictionaryLSearch} found at position: {linearSearch(dictionary, dictionaryLSearch)} (time : {stopwatch.Elapsed})");
+                }
+                else
+                {
+                    Console.WriteLine($"{dictionaryLSearch} not found in the dictionary. ");
+                }
             }
             else if (menuOption == "2")
             {
-                Stopwatch stopwatch = new Stopwatch();
                 Console.Write("PLease enter the word you are looking for: ");
                 string dictionaryBSearch = Console.ReadLine();
                 stopwatch.Start();
@@ -59,29 +73,55 @@ class Program
                     Console.WriteLine($"{dictionaryBSearch} not found in the dictionary.");
                 }
             }
+            else if (menuOption == "3")
+            {
+                stopwatch.Start();
+                int notFound = 0;
+                for (int i = 0; i < aliceWords.Length; i++)
+                {
+                    int search = linearSearch(dictionary, aliceWords[i].ToLower());
+                    if (search == -1)
+                    {
+                        notFound++;
+                    }
+                }
+                stopwatch.Stop();
+                Console.WriteLine($"Number of words not found in dictionary: {notFound} ({stopwatch.Elapsed} seconds)");
+            }
             else if (menuOption == "4")
             {
-                Stopwatch stopwatch = new Stopwatch();
-                Console.Write("Please enter the word you're looking for: ");
-                string aliceBSearch = Console.ReadLine();
                 stopwatch.Start();
-                if (binarySearch(aliceWords, aliceBSearch) > -1)
+                int notFound = 0;
+                foreach (string w in aliceWords)
                 {
-                    stopwatch.Stop();
-                    Console.WriteLine($"{aliceBSearch} found at position: {binarySearch(aliceWords, aliceBSearch)} (time: {stopwatch.Elapsed})");
+                    int search = binarySearch(dictionary, w.ToLower());
+                    if (search == -1)
+                    {
+                        notFound++;
+                    }
                 }
-                else
-                {
-                    Console.WriteLine($"{aliceBSearch} not found in Alice in Wonderland.");
-                }
+                stopwatch.Stop();
+                Console.WriteLine($"Number of words not found in dictionary: {notFound} ({stopwatch.Elapsed} seconds)");
             }
             else if (menuOption == "5")
             {
                 break;
             }
-
-
         }
+    }
+
+    static int linearSearch<T>(IList<T> aList, T item) where T : IComparable
+    {
+        int index = -1;
+        foreach (T element in aList)
+        {
+            index++;
+            if (element.Equals(item))
+            {
+                return index;
+            }
+        }
+        return -1;
     }
 
     static int binarySearch<T>(IList<T> aList, T item) where T : IComparable
@@ -89,7 +129,7 @@ class Program
         var lIndex = 0;
         var hIndex = aList.Count - 1;
 
-        while (lIndex < hIndex)
+        while (lIndex <= hIndex)
         {
             var mIndex = (int)Math.Floor(((lIndex + hIndex) / 2.0));
             var compare = item.CompareTo(aList[mIndex]);
@@ -108,6 +148,24 @@ class Program
         }
         return -1;
 
+    }
+
+    static int bubbleSort<T>(IList<T> aList) where T : IComparable
+    {
+        for (int i = 0; i < aList.Count - 1; i++)
+        {
+            for (int j = 0; j < aList.Count - (i + 1); j++)
+            {
+                int compare = aList[j].CompareTo(aList[j + 1]);
+                if (compare == 1)
+                {
+                    T chng = aList[j + 1];
+                    aList[j + 1] = aList[j];
+                    aList[j] = chng;
+                }
+            }
+        }
+        return -1;
     }
 
     public static void printStringArray(String[] array, int start, int stop)
